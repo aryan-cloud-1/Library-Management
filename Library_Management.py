@@ -14,12 +14,11 @@ def show_books():
     else:
         print("Books Available:")
         for book in books:
-            print(book, end = " ")
-        print("")
+            print(book)
 
 def issue_book():
     if len(books) == 0:
-        print("NO books Available")
+        print("No books Available")
         return
     show_books()
     user_want = input("Enter the book name: ")
@@ -28,7 +27,8 @@ def issue_book():
         issued_books.append(user_want)
         books.remove(user_want)
     else:
-        print(user_want,"not available")
+        print("Please enter a name from the list shown")
+
 
 def return_book():
     user_return = input("Enter the name of book you want to return: ")
@@ -44,22 +44,22 @@ def return_book():
 
 def library():
     while True:
-        print('\n_________________MENU_________________')
+        print('\n_________________MENU_________________\n')
         print('1. Add Book')
         print('2. Show Books')
         print('3. Issue Books')
         print('4. Return Books')
         print('5. Exit')
-        choice = int(input("Enter your choice: "))
-        if choice == 1:
+        choice = input("Enter your choice: ")
+        if choice == '1':
             add_book()
-        elif choice == 2:
+        elif choice == '2':
             show_books()
-        elif choice == 3:
+        elif choice == '3':
             issue_book()
-        elif choice == 4:
+        elif choice == '4':
             return_book()
-        elif choice == 5:
+        elif choice == '5':
             print('Aapke Baap ki dukan nhi hai. Paise de ke jana')
             break
         else:
