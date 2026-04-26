@@ -1,7 +1,12 @@
 # ===============================================================LIBRARY MANAGEMENT SYSTEM ===============================================================
 #  DATABASE
+
+
 print("===========================================================WELCOME TO OUR LIBRARY=======================================================")
+user_name = ""
+date = ""
 books = []
+issue_data = {"Name" : user_name, "Date_of_issue" : date, "Book_issued" : books}
 issued_books = []
 def add_book():
     name = input('Enter the book Name: ')
@@ -22,6 +27,10 @@ def issue_book():
         return
     show_books()
     user_want = input("Enter the book name: ")
+    global user_name
+    user_name = input("Enter your name: ")
+    global date_of_issue
+    date_of_issue = input("Enter the date(ddmmyy): ")
     if user_want in books:
         print(user_want,"Issued")
         issued_books.append(user_want)
